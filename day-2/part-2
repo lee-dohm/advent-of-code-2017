@@ -1,0 +1,7 @@
+#!/usr/bin/env elixir
+
+Code.load_file("day-2.exs", __DIR__)
+
+text = File.read!(Path.expand("puzzle-input.txt", __DIR__))
+
+IO.puts(Day2.checksum2(text))
