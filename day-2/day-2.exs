@@ -2,22 +2,24 @@ defmodule Day2 do
   def checksum(text) do
     text
     |> split_lines
-    |> Enum.map(&min_max/1)
+    |> parse_lines
+    |> Enum.map(&Enum.min_max/1)
     |> Enum.map(fn({min, max}) -> max - min end)
     |> Enum.reduce(&Kernel.+/2)
-  end
-
-  defp min_max(line) do
-    line
-    |> split
-    |> parse
-    |> Enum.min_max
   end
 
   defp parse(list) do
     Enum.map(list, fn(item) ->
       {val, _} = Integer.parse(item)
       val
+    end)
+  end
+
+  defp parse_lines(list) do
+    Enum.map(list, fn(line) ->
+      line
+      |> split
+      |> parse
     end)
   end
 
