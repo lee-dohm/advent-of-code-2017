@@ -1,6 +1,6 @@
 defmodule Day1 do
   def captcha(text) do
-    temp = split(text)    
+    temp = split(text)
     list = Enum.concat([temp, [List.first(temp)]])
 
     list
