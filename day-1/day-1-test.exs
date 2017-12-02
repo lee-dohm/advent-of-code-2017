@@ -27,5 +27,24 @@ defmodule Day1.Test do
   end
 
   describe "second half solution" do
+    test "1212 returns 6" do
+      assert Day1.captcha2("1212") == 6
+    end
+
+    test "1221 returns 0" do
+      assert Day1.captcha2("1221") == 0
+    end
+
+    test "123425 returns 4" do
+      assert Day1.captcha2("123425") == 4
+    end
+
+    test "123123 returns 12" do
+      assert Day1.captcha2("123123") == 12
+    end
+
+    test "12131415 returns 4" do
+      assert Day1.captcha2("12131415") == 4
+    end
   end
 end
