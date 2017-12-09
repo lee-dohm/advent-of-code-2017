@@ -5,7 +5,14 @@ Code.load_file("day-4.exs", __DIR__)
 text = File.read!(Path.expand("puzzle-input.txt", __DIR__))
 passphrases = String.split(text, "\n", trim: true)
 valid = Enum.reduce(passphrases, 0, fn(passphrase, count) ->
-          if Day4.anagram_valid?(passphrase) do
+          valid = Day4.valid?(passphrase, fn(word) ->
+            word
+            |> String.graphemes
+            |> Enum.sort
+            |> Enum.join
+          end)
+
+          if valid do
             count + 1
           else
             count

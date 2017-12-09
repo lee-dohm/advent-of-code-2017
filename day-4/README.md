@@ -27,3 +27,7 @@ For example:
 * `oiii ioii iioi iiio` is not valid - any of these words can be rearranged to form any other word.
 
 Under this new system policy, how many passphrases are valid?
+
+## Notes
+
+Part 2 is just part 1 with an extra processing step tossed in. After coding the solutions for the two parts separately, I removed the duplicated code from the `Day4` module and passed in the extra processing from the `part-2` script itself.
