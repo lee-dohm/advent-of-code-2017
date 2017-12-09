@@ -1,0 +1,10 @@
+#!/usr/bin/env elixir
+
+Code.load_file("day-3.exs", __DIR__)
+
+target = 325_489
+ring = {_, _, n} = Day3.find_ring(target)
+indices = Day3.get_subrange_indices(ring, target)
+distance = Day3.distance_to_center(n, indices)
+
+IO.puts("distance = #{distance}")
